@@ -6,3 +6,5 @@ echo " who is running this: $USER"
 echo " current working directory: $PWD"
 echo " home directory: $HOME"
 echo " Process Instance ID: $$ "
+sleep 5 &
+echo " background prcoess running just now: $!"
