@@ -6,3 +6,7 @@ NUM2=20
 SUM=$(($NUM1+$NUM2))
 
 echo "sum is: $SUM"
+
+#Array
+MOVIES=("RRR", "Varanasi", "Pushpa")
+echo " Movies are: $(MOVIES[@])
