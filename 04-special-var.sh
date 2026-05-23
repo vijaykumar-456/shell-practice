@@ -8,3 +8,5 @@ echo " home directory: $HOME"
 echo " Process Instance ID: $$ "
 sleep 5 &
 echo " background prcoess running just now: $!"
+wait $!
+echo "Line Number: $LINENO"
