@@ -9,4 +9,4 @@ echo "sum is: $SUM"
 
 #Array
 MOVIES=("RRR", "Varanasi", "Pushpa")
-echo " Movies are: $(MOVIES[@])
+echo " Movies are: $(MOVIES[@])"
