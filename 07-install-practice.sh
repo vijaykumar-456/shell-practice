@@ -11,4 +11,10 @@ echo "I am contuing..."
 
 echo "Installing mysql"
 
-dnf install mysqlddffd -y
+dnf install mysql -y
+if [ $? -ne 0 ]; then
+    echo "Installing mysql is ... FAILED"
+    exit 1
+else
+    echo "Installing mysql is  ... SUCCESS"
+fi
