@@ -2,7 +2,7 @@
 
 $USERID=$(id -u)
 
-if [ $USER -eq 0 ]; then
+if [ $USERID -eq 0 ]; then
     echo " Try with Sudo access"
     exit 1
 
