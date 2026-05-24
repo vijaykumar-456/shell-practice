@@ -8,3 +8,7 @@ if [ $USER -ne 0 ]; then
 fi
 
 echo "I am contuing..."
+
+echo "Installing mysql"
+
+dnf install mysqlddffd -y
