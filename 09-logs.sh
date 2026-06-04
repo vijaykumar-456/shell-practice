@@ -24,7 +24,7 @@ echo "I am continuing..."
 dnf list installed mysql &>> $LOG_FILES
 
 if [ $? -eq 0 ]; then
-    echo " Already mysql installed ... SKIP" | t -a $LOG_FILES
+    echo " Already mysql installed ... SKIP" 
 else
     dnf install mysql -y &>> $LOG_FILES
     VALIDATE Mysql $?
