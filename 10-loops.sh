@@ -28,6 +28,7 @@ do
         VALIDATE "Installing $package" $?
     else
         echo "Already $package installed ... SKIPPING" | tee -a $LOG_FILES
+    fi
 done
 
 
