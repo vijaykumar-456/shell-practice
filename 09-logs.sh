@@ -1,5 +1,5 @@
 #!bin/bash
-LOG_DIR=/home/ec2-user/shell-logs
+LOG_DIR=/var/log/shell-script
 LOG_FILES="$LOG_DIR/$0.log"
 
 USERID=$(id -u)
