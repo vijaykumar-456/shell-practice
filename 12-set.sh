@@ -8,7 +8,7 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-trap 'echo "erro at $LINENO", command: $BASH_COMMAND"'
+trap 'echo "error at $LINENO", command: $BASH_COMMAND"'ERR
 
 USERID=$(id -u)
 
