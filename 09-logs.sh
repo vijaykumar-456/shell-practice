@@ -24,7 +24,7 @@ echo "I am continuing..."
 dnf list installed mysql &>> $LOG_FILES
 
 if [ $? -eq 0 ]; then
-    echo " Already mysql installed ... SKIP" 
+    echo " Already mysql installed ... SKIP" | t -a $LOG_FILES
 else
     dnf install mysql -y &>> $LOG_FILES
     VALIDATE Mysql $?
@@ -34,7 +34,7 @@ fi
 dnf list installed nginx &>> $LOG_FILES
 
 if [ $? -eq 0 ]; then
-    echo " Already nginx installed ... SKIP"
+    echo " Already nginx installed ... SKIP" | t -a $LOG_FILES
 else
     echo " Installing Nginx ..."
     dnf install nginx -y &>> $LOG_FILES
