@@ -1,7 +1,6 @@
 !#bin/bash
 #!bin/bash
-LOG_DIR=/var/log/shell-script
-LOG_FILES="$LOG_DIR/$0.log"
+
 
 USERID=$(id -u)
 
