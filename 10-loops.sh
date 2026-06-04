@@ -1,6 +1,7 @@
 #!bin/bash
 LOG_DIR=/var/log/shell-script
 LOG_FILES="$LOG_DIR/$0.log"
+TIMESTAMP=$(date "+%Y-%m-%d %H:%M:%S")
 
 USERID=$(id -u)
 
@@ -12,10 +13,10 @@ fi
 
 VALIDATE(){
      if [ $2 -ne 0 ]; then
-        echo " Installation $1 .... Failed" | tee -a $LOG_FILES
+        echo "$TIMESTAMP [ERROR] Installation $1 .... Failed" | tee -a $LOG_FILES
         exit 1
     else
-        echo " $1 installed ... Success" | tee -a $LOG_FILES
+        echo "$TIMESTAMP [INFO]  installed $1... Success" | tee -a $LOG_FILES
     fi
 }
 
@@ -25,9 +26,9 @@ do
     dnf list installed $package
     if [ $? -ne 0 ]; then
         dnf install $package -y &>> LOG_FILES
-        VALIDATE "Installing $package" $?
+        VALIDATE "$TIMESTAMP [INFO] Installing $package" $?
     else
-        echo "Already $package installed ... SKIPPING" | tee -a $LOG_FILES
+        echo "$TIMESTAMP [INFO] Already $package installed ... SKIPPING" | tee -a $LOG_FILES
     fi
 done
 
