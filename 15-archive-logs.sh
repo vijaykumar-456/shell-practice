@@ -18,7 +18,7 @@ if [ ! -d "$SOURCE_DIR" ]; then
 fi
 
 #if destination directory path not passed
-if [ ! -d "$DIST_DIR" ]; then
+if [ ! -d "$DEST_DIR" ]; then
     echo "ERROR:: destination directory not defined"
     exit 1
 fi
