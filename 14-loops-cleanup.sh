@@ -24,12 +24,12 @@ FILES=$(find $SOURCE_DIR -name "*.log" -type f -mtime +$DAYS)
 
 if [ -z "$FILES" ]; then
     echo -e "$R No log files older than $N $Y $DAYS $N found"
-    echo 0
+    exit 0
 fi
 
 while IFS= read -r FILE
 do
     echo -e "File to be deleted: $Y $FILE $N"
-    rm -f $FILE
+    rm -f "$FILE"
     echo -e "File $R $FILE $N is $ $G deleted $N "
 done <<< "$FILES"
