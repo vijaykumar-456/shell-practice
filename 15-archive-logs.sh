@@ -23,7 +23,7 @@ if [ ! -d "$DEST_DIR" ]; then
     exit 1
 fi
 
-FILES=$(find $SOURCE_DIR -name "*.log" -type f +mtime +$DAYS)
+FILES=$(find $SOURCE_DIR -name "*.log" -type f -mtime +$DAYS)
 
 if [ -z "$FILES" ]; then
     echo "FILES: $FIles not found older than $DAYS"
