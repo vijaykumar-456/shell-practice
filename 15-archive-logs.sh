@@ -30,12 +30,24 @@ if [ -z "$FILES" ]; then
     exit 0
 fi
 
-while IFS= read -r FILE
-do
-    echo "$FILE"
-done <<< "$FILES"
+# while IFS= read -r FILE
+# do
+#     echo "$FILE"
+# done <<< "$FILES"
 
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
 ARCHIVE_FILES="$DEST_DIR/expense-archive-$TIMESTAMP.tar.gz"
 
-tar -czvf $ARCHIVE_FILES $FILES > /dev/null
+tar -czvf $ARCHIVE_FILES $FILES 
+
+if [ $? -eq 0 ]; then
+    echo "Archival success, Deleting the files"
+    while IFS= read -r FILE
+    do
+    rm -f $FILE
+    echo "Deleting the files:$FILE"
+    done <<< "$FILES"
+else
+    echo "ERROR:: Archival fails"
+    exit 1
+fi
