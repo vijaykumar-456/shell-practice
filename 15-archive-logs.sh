@@ -26,7 +26,7 @@ fi
 FILES=$(find "$SOURCE_DIR" -name "*.log" -type f -mtime +$DAYS)
 
 if [ -z "$FILES" ]; then
-    echo "FILES: $FIles not found older than $DAYS"
+    echo "FILES: $FILES not found older than $DAYS"
     exit 0
 fi
 
@@ -35,7 +35,7 @@ do
     echo "$FILE"
 done <<< "$FILES"
 
-TIMESTAMP=$(date +%y-%m-%d-%H-%M-%S)
+TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
 ARCHIVE_FILES="$DEST_DIR/expense-archive-$TIMESTAMP.tar.gz"
 
 tar -czvf $ARCHIVE_FILES $FILES
