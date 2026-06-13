@@ -31,5 +31,5 @@ while IFS= read -r FILE
 do
     echo -e "File to be deleted: $Y $FILE $N"
     rm -f $FILE
-    echo "File $R $FILE $N is $ $G deleted $N "
+    echo -e "File $R $FILE $N is $ $G deleted $N "
 done <<< "$FILES"
