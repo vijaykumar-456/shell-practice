@@ -22,3 +22,15 @@ if [ ! -d "$DIST_DIR" ]; then
     echo "ERROR:: destination directory not defined"
     exit 1
 fi
+
+FILES=$(find $SOURCE_DIR -name "*.log" -type f +mtime +$DAYS)
+
+if [ -z "$FILES" ]; then
+    echo "FILES: $FIles not found older than $DAYS"
+    exit 0
+fi
+
+while IFS= read -r FILE
+do
+    echo "$FILE"
+done <<< "$FILES"
