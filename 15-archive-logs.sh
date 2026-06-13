@@ -36,6 +36,6 @@ do
 done <<< "$FILES"
 
 TIMESTAMP=$(date +%y-%m-%s-%H-%M-%S)
-ARCHIVE_FILES= "$DEST_DIR /expense-archive-$TIMESTAMP.tar.gz"
+ARCHIVE_FILES= "$DEST_DIR/expense-archive-$TIMESTAMP.tar.gz"
 
 tar -czvf $ARCHIVE_FILES $FILES
