@@ -38,4 +38,4 @@ done <<< "$FILES"
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
 ARCHIVE_FILES="$DEST_DIR/expense-archive-$TIMESTAMP.tar.gz"
 
-tar -czvf $ARCHIVE_FILES $FILES
+tar -czvf $ARCHIVE_FILES $FILES > /dev/null
