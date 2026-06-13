@@ -2,7 +2,7 @@
 
 SOURCE_DIR=$1
 DEST_DIR=$2
-DAYS={3:-14}
+DAYS=${3:-14}
 
 #if two directory path not passed in the command
 if [ -z "$SOURCE_DIR" ] || [ -z "$DEST_DIR" ]; then
